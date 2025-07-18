@@ -33,7 +33,7 @@ CREATE TABLE IF NOT EXISTS products(
 	product_price DECIMAL(9,2) NOT NULL,
 	product_qoh int(11) NOT NULL,
 	product_img TEXT NOT NULL,
-    has_variants BOOLEAN DEFAULT FALSE;
+    has_variants BOOLEAN DEFAULT FALSE,
     created_at DATETIME DEFAULT CURRENT_TIMESTAMP, 
     updated_at DATETIME DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
     FOREIGN KEY (subcategory_id) REFERENCES subcategories(subcategory_id)
