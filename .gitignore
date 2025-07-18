@@ -1,0 +1,3 @@
+# Ignore files in the products upload directory, but keep the directory structure
+images/uploads/products/*
+!images/uploads/products/.gitkeep

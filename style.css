@@ -1,0 +1,234 @@
+/*-- <<<<<<<<<<<<<<<<<<[note]>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+//We can use space for declaring css class name. 
+//We can this technique to add multiple attributes to the one thing.
+//(Selector combinator)
+
+<p class="one two">lalala</p>
+
+.one {
+    color: black;
+}
+.two {
+    font-weight: bold;
+}
+
+css id
+//----
+<div id="header">Header</div>
+
+#header {
+  background-color: blue;
+  color: white;
+}
+
+css class
+//-------
+<div class="menu-item">Home</div>
+
+.menu-item {
+  padding: 10px;
+  color: black;
+}
+<<<<<<<<<<<<<<<<<<<<<<[note]>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>*/
+
+
+html, body {
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f8f9fa; 
+}
+
+/* -- [Start : top nav bar] -- */
+.navbar-brand img {
+    max-height: 50px;
+    width: auto;
+}
+
+.nav-link.active {
+    color: #ffffff !important;
+    font-weight: 600;
+    background-color: #0d6efd;
+    border-radius: 0.25rem;
+}
+
+.navbar .cart-badge {
+    background-color: #ced4da;
+    border-radius: 50%;
+    font-size: 0.75rem;
+    padding: 0.1em 0.4em; /*top-bottom left-right*/
+    color: black; 
+}
+/* -- [End : top nav bar] -- */
+
+
+/* -- [Start : main content of the doc] -- */
+.main-container-wrapper{
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.content {
+    flex: 1;
+}
+
+.main-content-header {
+    border-bottom: 2px solid #ccc;
+    padding: 10px 0;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.main-content-header h2 {
+    margin: 0;
+    font-size: 2rem;         
+    color: #000;              
+    font-weight: 600;        
+    letter-spacing: 1px;     
+}
+/* -- [End: main content of the doc] -- */
+
+
+/* -- [Start : slide show] -- */
+.carousel-img {
+    display: block;
+    width: 100%;
+    height: 300px; 
+}
+/* -- [End : slide show] ---- */
+
+
+/* -- [Start : login/registration] ---- */
+.login-form-container{
+    width: 50%;
+    margin: 50px auto; /* centers the card horizontally */
+}
+
+.login-box {
+    background-color: #fff;
+    max-width: 450px;
+    margin: 50px auto;
+    padding: 30px 25px;
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+/* -- [End : login/registration] ---- */
+
+
+/* -- [Start : dashboard] ---- */
+#v-tabs .nav-link {
+    margin-bottom: 5px;
+    cursor: pointer;
+}
+
+.dashboard-vtab-container {
+    width: 83.3333%; /* Same as col-md-10 */
+    margin-left: auto; /* Pushes the div to the right like Bootstrap’s col-md-10 next to col-md-2 */
+}
+
+  
+#tab-content {
+    border: 1px solid #dee2e6;
+    padding: 20px;
+    min-height: 300px;
+    background-color: #f8f9fa;
+}
+/* -- [End : dashboard] ------ */
+
+
+/* -- [Start : order confirmation] -- */
+.order-confirmation-container {
+    width: 100%;
+    max-width: 600px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.order-confirmation-header {
+    text-align: center;
+    font-size: 1.5rem;
+    color: #333;
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+
+.order-confirmation-content {
+    font-family: Arial, sans-serif;
+    color: #555;
+    line-height: 1.6;
+}
+
+.order-confirmation-greeting {
+    font-size: 1.1rem;
+    margin-bottom: 10px;
+}
+
+.order-confirmation-text {
+    font-size: 1rem;
+    margin-bottom: 15px;
+}
+
+.order-confirmation-link {
+    font-size: 1rem;
+    margin-bottom: 15px;
+}
+
+.order-confirmation-link-text {
+    color: #007bff; /* Blue color */
+    cursor: pointer; /* Indicate it's clickable */
+}
+
+.order-confirmation-link-text:hover {
+    text-decoration: underline;
+}
+
+.order-confirmation-signoff {
+    font-size: 1rem;
+    text-align: left; /* Align to the left */
+    font-weight: bold;
+    margin-top: 20px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .order-confirmation-container {
+        width: 90%;
+    }
+
+    .order-confirmation-header {
+        font-size: 1.25rem;
+    }
+
+    .order-confirmation-text, .order-confirmation-link, .order-confirmation-signoff {
+        font-size: 0.95rem;
+    }
+}
+/* -- [End : order confirmation] -- */
+
+/* -- [Start : footer] -- */
+footer#id_footer {
+    bottom: 0;   
+	width: 100%;
+    border-top: 2px solid #0d6efd; 
+    background-image: linear-gradient(to right, #212529, #343a40); /* subtle gradient */
+    font-size: 13px;
+    letter-spacing: 0.3px;
+}
+
+footer#id_footer p {
+    margin-bottom: 0.5rem;
+    color: #ced4da; 
+}
+
+footer#id_footer p:last-child {
+    margin-bottom: 0;
+}
+/* -- [End : footer] -- */
