@@ -75,7 +75,7 @@ CREATE TABLE IF NOT EXISTS users (
     user_name VARCHAR(100) NOT NULL,
     user_password VARCHAR(100) NOT NULL,
     user_email VARCHAR(100) UNIQUE,
-    user_address VARCHAR(100) UNIQUE,
+    user_address VARCHAR(100) NOT NULL,
     user_telephone_no VARCHAR(100) NOT NULL,
     created_at DATETIME DEFAULT CURRENT_TIMESTAMP, 
     updated_at DATETIME DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
