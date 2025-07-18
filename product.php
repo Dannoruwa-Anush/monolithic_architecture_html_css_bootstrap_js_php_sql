@@ -55,11 +55,14 @@ if (isset($_GET['id'])) {
                       <input type="radio" name="selected_variant_id"
                         value="<?= $variant['variant_id'] ?>"
                         data-qoh="<?= $variant['variant_qoh'] ?>"
+                        <?= $variant['variant_qoh'] == 0 ? 'disabled' : '' ?>
                         required>
                     </td>
                     <td><?= htmlspecialchars($variant['variant_name']) ?></td>
                     <td><?= htmlspecialchars($variant['variant_price']) ?></td>
-                    <td><?= htmlspecialchars($variant['variant_qoh']) ?></td>
+                    <td>
+                      <?= $variant['variant_qoh'] == 0 ? '<span class="text-danger fw-bold">Out of Stock</span>' : htmlspecialchars($variant['variant_qoh']) ?>
+                    </td>
                   </tr>
                 <?php endforeach; ?>
               </tbody>
@@ -69,8 +72,7 @@ if (isset($_GET['id'])) {
           <div class="d-flex align-items-center mt-3">
             <input type="number" name="product_purchased_qty" class="form-control me-2"
               placeholder="Qty" min="1" style="width: 80px;" id="qtyInput"
-              <?= $product['has_variants'] ? 'disabled' : 'value="1" max="'.htmlspecialchars($product['product_qoh']).'" ' ?>
-            >
+              <?= $product['has_variants'] ? 'disabled' : 'value="1" max="' . htmlspecialchars($product['product_qoh']) . '" ' ?>>
 
             <?php if (!$product['has_variants'] && $product['product_qoh'] == 0): ?>
               <button type="button" class="btn btn-secondary disabled">Out of Stock</button>
@@ -86,19 +88,19 @@ if (isset($_GET['id'])) {
 </div>
 
 <script>
-document.addEventListener('DOMContentLoaded', () => {
-  const radios = document.querySelectorAll('input[name="selected_variant_id"]');
-  const qtyInput = document.getElementById('qtyInput');
+  document.addEventListener('DOMContentLoaded', () => {
+    const radios = document.querySelectorAll('input[name="selected_variant_id"]');
+    const qtyInput = document.getElementById('qtyInput');
 
-  radios.forEach(radio => {
-    radio.addEventListener('change', () => {
-      const qoh = parseInt(radio.dataset.qoh);
-      qtyInput.disabled = false;
-      qtyInput.value = 1;
-      qtyInput.max = qoh;
+    radios.forEach(radio => {
+      radio.addEventListener('change', () => {
+        const qoh = parseInt(radio.dataset.qoh);
+        qtyInput.disabled = false;
+        qtyInput.value = 1;
+        qtyInput.max = qoh;
+      });
     });
   });
-});
 </script>
 <!-- ######################### [End-body/product part] ######################################### -->
 
