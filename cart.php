@@ -190,7 +190,12 @@ if (isset($_SESSION['cart_items']) && is_array($_SESSION['cart_items'])) {
                             <button type="submit" name="update_cart" class="btn btn-primary">Update Cart</button>
     </form>
     <form action="index.php?page=cart" method="POST">
-        <button type="submit" name="place_order" class="btn btn-success">Place Order</button>
+        <?php
+                    $isCustomer = isset($_SESSION['user_info']) && $_SESSION['user_info']['role_name'] === 'customer';
+        ?>
+        <button type="submit" name="place_order" class="btn btn-success" <?= $isCustomer ? '' : 'disabled' ?>>
+            Place Order
+        </button>
     </form>
 </div>
 </div>
